@@ -1,5 +1,4 @@
-"" .ideavimrc - Matt Chapman
-
+"" .ideavimrc 
 
 "" Base Settings
 "" ========================================================
@@ -12,7 +11,6 @@ set showcmd
 
 set ignorecase
 set smartcase
-set hlsearch
 set incsearch
 
 set visualbell
@@ -59,6 +57,8 @@ let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
 let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
 let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
 
+let g:WhichKeyDesc_method = "gk Move method up"
+let g:WhichKeyDesc_method_down = "gj Move method down"
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
@@ -78,6 +78,10 @@ let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent loca
 
 let g:WhichKeyDesc_close_tab = "<leader>q Close active tab"
 
+let g:WhichKeyDesc_search = "<leader>s Search"
+let g:WhichKeyDesc_search_file = "<leader>sf Search file"
+let g:WhichKeyDesc_search_project = "<leader>sp Search project"
+
 let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
 let g:WhichKeyDesc_refactoring_rename = "<leader>rn Rename element"
 let g:WhichKeyDesc_refactoring_method = "<leader>rm Extract method"
@@ -96,14 +100,8 @@ let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
 let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
 
 let g:WhichKeyDesc_code = "<leader>g Code movement"
-let g:WhichKeyDesc_method = "<leader>gk Move method up"
-let g:WhichKeyDesc_method_down = "<leader>gj Move method down"
-let g:WhichKeyDesc_last_change = "<leader>gs Jump to last change"
-let g:WhichKeyDesc_next_change = "<leader>gl Jump to next change"
 let g:WhichKeyDesc_next_change_marker = "<leader>ga Show next change marker"
 let g:WhichKeyDesc_prev_change_marker = "<leader>gø Show previous change marker"
-let g:WhichKeyDesc_next_element_usage = "<leader>gn Go to next element under caret usage"
-let g:WhichKeyDesc_prev_element_usage = "<leader>gN Go to previous element under caret usage"
 
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
 let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
@@ -164,9 +162,12 @@ map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 " File navigation
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
 map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
+
+" Search project
+map <leader>sf /
+map <leader>sp <action>(FindInPath)
 
 " Close active tab
 map <leader>q <action>(CloseContent)
@@ -184,18 +185,15 @@ nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gf <Action>(Back)
-nmap <leader>gb <Action>(Forward)
 
-nmap <leader>gk <Action>(MethodUp)
-nmap <leader>gj <Action>(MethodDown)
+nmap gk <Action>(MethodUp)
+nmap gj <Action>(MethodDown)
 nmap <leader>gs <Action>(JumpToLastChange)
 nmap <leader>gl <Action>(JumpToNextChange)
-nmap <leader>gn <Action>(GotoNextElementUnderCaretUsage)
-nmap <leader>gN <Action>(GotoPrevElementUnderCaretUsage)
 
 " Errors
 nmap <leader>en <Action>(GotoNextError)
 nmap <leader>ep <Action>(GotoPreviousError)
 
+" Toggle
 nmap <leader>tw <Action>(EditorToggleUseSoftWraps)

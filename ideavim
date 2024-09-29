@@ -1,4 +1,4 @@
-"" .ideavimrc 
+"" .ideavimrc
 
 "" Base Settings
 "" ========================================================
@@ -40,6 +40,12 @@ let g:WhichKey_CommandColor = "#41ead4"
 let g:WhichKey_PrefixColor = "#f335b2"
 let g:WhichKey_SortOrder = "by_key_prefix_first"
 
+" Set position of the which-key menu
+let g:WhichKey_Position = 'bottom'
+let g:WhichKey_Align = 'center'
+" Set the width of the menu to help center it
+let g:WhichKey_Width = 40  " Adjust this value based on your preference
+
 let g:WhichKeyDesc_leader = "<leader> Leader key"
 
 let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
@@ -59,6 +65,8 @@ let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposit
 
 let g:WhichKeyDesc_method = "gk Move method up"
 let g:WhichKeyDesc_method_down = "gj Move method down"
+let g:WhichKeyDesc_start_line = "gb Move to start of line"
+let g:WhichKeyDesc_method = "ge Move to end of line"
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
@@ -185,11 +193,13 @@ nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gs <Action>(GotoSuperMethod)
+
 
 nmap gk <Action>(MethodUp)
 nmap gj <Action>(MethodDown)
-nmap <leader>gs <Action>(JumpToLastChange)
-nmap <leader>gl <Action>(JumpToNextChange)
+nmap gb ^
+nmap ge $
 
 " Errors
 nmap <leader>en <Action>(GotoNextError)
@@ -197,3 +207,5 @@ nmap <leader>ep <Action>(GotoPreviousError)
 
 " Toggle
 nmap <leader>tw <Action>(EditorToggleUseSoftWraps)
+
+nmap z <C-r>

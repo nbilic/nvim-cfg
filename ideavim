@@ -95,10 +95,15 @@ let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
 let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
 let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
 
-let g:WhichKeyDesc_git = "<leader>g Git operations"
-let g:WhichKeyDesc_git_commit = "<leader>gc Open Git commit dialog"
-let g:WhichKeyDesc_git_status = "<leader>gs Open Git status dialog"
-let g:WhichKeyDesc_git_branches = "<leader>gb Open Git branches list"
+let g:WhichKeyDesc_code = "<leader>g Code movement"
+let g:WhichKeyDesc_method = "<leader>gk Move method up"
+let g:WhichKeyDesc_method_down = "<leader>gj Move method down"
+let g:WhichKeyDesc_last_change = "<leader>gs Jump to last change"
+let g:WhichKeyDesc_next_change = "<leader>gl Jump to next change"
+let g:WhichKeyDesc_next_change_marker = "<leader>ga Show next change marker"
+let g:WhichKeyDesc_prev_change_marker = "<leader>gø Show previous change marker"
+let g:WhichKeyDesc_next_element_usage = "<leader>gn Go to next element under caret usage"
+let g:WhichKeyDesc_prev_element_usage = "<leader>gN Go to previous element under caret usage"
 
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
 let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
@@ -185,7 +190,14 @@ nmap <leader>gt <Action>(GotoTest)
 nmap <leader>gf <Action>(Back)
 nmap <leader>gb <Action>(Forward)
 
+nmap <leader>gk <Action>(MethodUp)
+nmap <leader>gj <Action>(MethodDown)
+nmap <leader>gs <Action>(JumpToLastChange)
+nmap <leader>gl <Action>(JumpToNextChange)
+nmap <leader>gn <Action>(GotoNextElementUnderCaretUsage)
+nmap <leader>gN <Action>(GotoPrevElementUnderCaretUsage)
+
 " Errors
-map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+nmap <leader>en <Action>(GotoNextError)
+nmap <leader>ep <Action>(GotoPreviousError)
 

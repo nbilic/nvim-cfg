@@ -1,4 +1,5 @@
-"" .ideavimrc 
+"" .ideavimrc - Matt Chapman
+
 
 "" Base Settings
 "" ========================================================
@@ -48,8 +49,9 @@ let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
 let g:WhichKeyDesc_comment = "<leader>c Comment line"
 
 let g:WhichKeyDesc_fold = "<leader>z Folding"
-let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
+let g:WhichKeyDesc_fold_all = "<leader>za Fold all regions"
 let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
+let g:WhichKeyDesc_fold_block = "<leader>zb Fold code block"
 
 let g:WhichKeyDesc_window = "<leader>w Window splits"
 let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
@@ -63,11 +65,10 @@ let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
 let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 
-let g:WhichKeyDesc_action= "<leader>a Actions"
-let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
-let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
-
 let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
+
+let g:WhichKeyDesc_toggle = "<leader>t Toggle"
+let g:WhichKeyDesc_toggle_wrap =  "<leader>tw wrap"
 
 let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
 let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
@@ -150,18 +151,15 @@ map <leader>c <action>(CommentByLineComment)
 map <leader>x :NERDTreeToggle<CR>
 
 " Folding
-map <leader>zc :action CollapseAllRegions<CR>
+map <leader>za :action CollapseAllRegions<CR>
 map <leader>zo :action ExpandAllRegions<CR>
+map <leader>zb :action CollapseBlock<CR>
 
 " Window splits
 map <leader>wv <Action>(SplitVertically)
 map <leader>wh <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
-
-" Actions
-map <leader>am <action>(ShowIntentionActions)
-map <leader>as <action>(SearchEverywhere)
 
 " File navigation
 map <leader>ff <action>(GotoFile)
@@ -200,3 +198,4 @@ nmap <leader>gN <Action>(GotoPrevElementUnderCaretUsage)
 nmap <leader>en <Action>(GotoNextError)
 nmap <leader>ep <Action>(GotoPreviousError)
 
+nmap <leader>tw <Action>(EditorToggleUseSoftWraps)

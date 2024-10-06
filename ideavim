@@ -129,8 +129,15 @@ nnoremap <A-p> :tabprev<CR>
 " Pane navigation
 nnoremap <A-h> <C-w>h
 nnoremap <A-l> <C-w>l
-nnoremap <A-k> <C-w>k
-nnoremap <A-j> <C-w>j
+"nnoremap <A-k> <C-w>k
+"nnoremap <A-j> <C-w>j
+map <A-k> <Action>(MoveLineUp)
+map <A-j> <Action>(MoveLineDown)
+
+inoremap <A-h> <Left>
+inoremap <A-j> <Down>
+inoremap <A-k> <Up>
+inoremap <A-l> <Right>
 
 " Jump between methods
 nnoremap [[ <Action>(MethodUp)
